@@ -28,6 +28,7 @@
 
   .editor-container.collapsed .CodeMirror-scroll{
     position: absolute;
+    overflow: hidden !important;
   }
   
   .editor-title{
