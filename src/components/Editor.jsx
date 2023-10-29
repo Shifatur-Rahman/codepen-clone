@@ -5,9 +5,10 @@ import 'codemirror/mode/xml/xml'
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/css/css'
 // import { Controlled as ControlledEditor } from 'react-codemirror2'
-// import { Controlled as CodeMirror } from "react-codemirror2";
 import {Controlled as CodeMirror} from 'react-codemirror2'
+import { AiOutlineArrowsAlt } from 'react-icons/ai';
 
+// AiOutlineArrowsAlt
 
 const Editor = (props) => {
     const { displayName, language, value, onChange } = props;
@@ -26,7 +27,9 @@ const Editor = (props) => {
         <div className={`editor-container ${open ? '' : 'collapsed'} `}>
             <div className='editor-title'>
                 {displayName}
-                <button>O/C</button>
+                <button className='expand-collapse-btn' onClick={()=> setOpen(prevOpen => !prevOpen) }>
+                    <AiOutlineArrowsAlt />
+                </button>
             </div>
 
             <CodeMirror

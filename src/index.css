@@ -21,6 +21,14 @@
     background-color: hsl(225,6%,25%);
     color: #fff;
   }
+
+  .editor-container.collapsed{
+    flex-grow: 0;
+  }
+
+  .editor-container.collapsed .CodeMirror-scroll{
+    position: absolute;
+  }
   
   .editor-title{
     display: flex;
@@ -38,3 +46,11 @@
     overflow: hidden;
   }
   
+  .expand-collapse-btn{
+    margin-left: .5rem;
+    background: none;
+    border: 1px solid white;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+  }
