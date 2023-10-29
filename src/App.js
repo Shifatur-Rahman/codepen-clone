@@ -2,38 +2,50 @@ import { useState, useEffect } from "react";
 import Editor from "./components/Editor";
 
 function App() {
-  // const [html, setHtml] = useState('');
-  // const [css, setCss] = useState('');
-  // const [js, setJs] = useState('');
-  // const [srcDoc, setSrcDoc] = useState('');
+  const [html, setHtml] = useState('');
+  const [css, setCss] = useState('');
+  const [js, setJs] = useState('');
+  const [srcDoc, setSrcDoc] = useState('');
 
-  // useEffect(() => {
-  //   const timeOut = setTimeout(() => {
-  //     setSrcDoc(`
-  //       <html>
-  //       <body> ${html} </body>
-  //       <style> ${css} </style>
-  //       <script> ${js} </script>
-  //       </html>
-  //       `)
-  //   }, 250)
-  //   return () => clearTimeout(timeOut)
-  // }, [html, css, js])
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      setSrcDoc(`
+        <html>
+        <body> ${html} </body>
+        <style> ${css} </style>
+        <script> ${js} </script>
+        </html>
+        `)
+    }, 250)
+    return () => clearTimeout(timeOut)
+  }, [html, css, js])
 
   return (
     <>
-     <div classname="pane top-pane">
+     <div style={{display:"flex"}} classname="pane top-pane">
         
-        <Editor />
-        <Editor />
-        <Editor />
+        <Editor 
+        language="xml" 
+        displayName="HTML" 
+        value={html} 
+        onChange={setHtml} />
+        <Editor 
+        language="css"
+        displayName="CSS" 
+        value={css} 
+        onChange={setCss} />
+        <Editor 
+        language="javascript" 
+        displayName="JS" 
+        value={js} 
+        onChange={setJs}/>
 
       </div>
 
     <div className="pane">
 
       <iframe
-    //  srcDoc={srcDoc}
+      srcDoc={srcDoc}
       title="output"
       sandbox="allow-scripts"
       frameBorder="0"         

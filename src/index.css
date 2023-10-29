@@ -1,4 +1,4 @@
-/* body{
+ body{ 
     margin: 0;
     padding: 0;
   }
@@ -30,10 +30,11 @@
     border-top-right-radius: .5rem;
     border-top-left-radius: .5rem;
   }
-  
-  .CodeMirror{
+
+  .code-mirror-wrapper{
     flex-grow: 1;
-    background-color: red;
-    height: 400px !important; 
+    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    overflow: hidden;
   }
-   */
+  
