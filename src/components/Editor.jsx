@@ -8,8 +8,6 @@ import 'codemirror/mode/css/css'
 import {Controlled as CodeMirror} from 'react-codemirror2'
 import { AiOutlineArrowsAlt } from 'react-icons/ai';
 
-// AiOutlineArrowsAlt
-
 const Editor = (props) => {
     const { displayName, language, value, onChange } = props;
     const [open, setOpen] = useState(true);
@@ -17,11 +15,6 @@ const Editor = (props) => {
     function handleChange(editor, data, value) {
         onChange(value);
     }
-
-    // var editors = document.getElementsByClassName('code-mirror-wrapper');
-    // for (let i = 1; i < editors.length; i++) {
-    //     editors[i].remove()
-    // }
        
     return (
         <div className={`editor-container ${open ? '' : 'collapsed'} `}>
